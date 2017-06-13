@@ -1,0 +1,10 @@
+
+<h1><%= @article.title %></h1>
+<!-- <p><%= @article.content %></p> -->
+
+<%= raw(render body: Kramdown::Document.new(@article.content).to_html) %>
+
+ <%= link_to 'edit', edit_article_path(@article) %>
+
+ <%= link_to 'back', articles_path %>
+
